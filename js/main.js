@@ -105,6 +105,7 @@ async function loadHomepage() {
         link.href = 'secondary.html';
         link.dataset.gradeId = g.id;
         const img = document.createElement('img');
+        img.alt = `Grado ${g.id}`;
         setIconWithFallback(img, GRADE_ICONS_PATH + (g.icon || `grade-${g.id}.svg`), FALLBACK_ICON);
         const footer = document.createElement('div');
         footer.className = 'card-footer';
