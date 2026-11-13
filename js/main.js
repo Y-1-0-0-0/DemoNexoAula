@@ -169,6 +169,7 @@ async function loadSecondary() {
         const box = document.createElement('div');
         box.className = 'card-box';
         const img = document.createElement('img');
+        img.alt = `Grupo ${group}`;
         img.className = 'grade-img';
         setIconWithFallback(img, `${GROUP_ICONS_PATH}grade-${group.toLowerCase()}.svg`, FALLBACK_ICON);
         box.addEventListener('click', () => {
