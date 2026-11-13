@@ -124,7 +124,6 @@ async function loadHomepage() {
         box.className = 'featured-card';
         const a = document.createElement('a');
         a.href = item.url || '#';
-        a.target = '_blank';
         a.rel = 'noopener noreferrer';
         const img = document.createElement('img');
         img.alt = `Acceso a ${item.name}`;
@@ -258,6 +257,7 @@ async function loadUsersPage() {
         link.dataset.gradeId = g.id;
         const img = document.createElement('img');
         setIconWithFallback(img, GRADE_ICONS_PATH + (g.icon || `grade-${g.id}.svg`), FALLBACK_ICON);
+        img.alt = g.label || `Grado ${g.id}`;
         const footer = document.createElement('div');
         footer.className = 'card-footer';
         const h = document.createElement('h6');
