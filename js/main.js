@@ -213,15 +213,8 @@ async function loadSecondary() {
     });
     const titleEl = document.getElementById('page-title');
     const gradeNameEl = document.getElementById('grade-name');
-    const faviconEl = document.getElementById('favicon-dynamic');
     if (titleEl) titleEl.textContent = `Grado ${selectedGrade}`;
     if (gradeNameEl) gradeNameEl.textContent = `Grado ${selectedGrade} lista de actividades`;
-    if (faviconEl)
-        setIconWithFallback(
-            faviconEl,
-            `${GRADE_ICONS_PATH}grade-${selectedGrade}.svg`,
-            FALLBACK_ICON
-        );
 }
 /**
  * Carga los grados y usuarios desde sus respectivos archivos JSON.
