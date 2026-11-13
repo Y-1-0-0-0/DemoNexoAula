@@ -1,0 +1,170 @@
+{
+  "mainLinks": [
+    {
+      "name": "Usuarios",
+      "url": "users.html",
+      "icon": "featured-users.svg"
+    },
+    {
+      "name": "Actividad escolar",
+      "url": "https://example.com",
+      "icon": "featured-general.svg"
+    }
+  ],
+  "activities": {
+    "1": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/1o-y-2o-de-primaria"
+        }
+      ],
+      "A": [
+        {
+          "name": "Actividad exclusiva 1a",
+          "url": "https://example.com"
+        }
+      ],
+      "B": []
+    },
+    "2": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/1o-y-2o-de-primaria"
+        }
+      ],
+      "A": [
+        {
+          "name": "Actividad exclusiva 2a",
+          "url": "https://example.com"
+        }
+      ],
+      "B": []
+    },
+    "3": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/3o-y-4o-primaria"
+        }
+      ],
+      "A": [],
+      "B": []
+    },
+    "4": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/3o-y-4o-primaria"
+        }
+      ],
+      "A": [],
+      "B": []
+    },
+    "5": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/5o-y-6o-de-primaria"
+        }
+      ],
+      "A": [],
+      "B": []
+    },
+    "6": {
+      "general": [
+        {
+          "name": "Tablas de multiplicar",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Comprensión lectora",
+          "url": "https://example.com"
+        },
+        {
+          "name": "Actividades en Cristic",
+          "url": "https://www.cristic.com/5o-y-6o-de-primaria"
+        }
+      ],
+      "A": [],
+      "B": []
+    }
+  },
+  "grades": [
+    {
+      "id": "1",
+      "label": "PRIMERO",
+      "icon": "grade-1.svg"
+    },
+    {
+      "id": "2",
+      "label": "SEGUNDO",
+      "icon": "grade-2.svg"
+    },
+    {
+      "id": "3",
+      "label": "TERCERO",
+      "icon": "grade-3.svg"
+    },
+    {
+      "id": "4",
+      "label": "CUARTO",
+      "icon": "grade-4.svg"
+    },
+    {
+      "id": "5",
+      "label": "QUINTO",
+      "icon": "grade-5.svg"
+    },
+    {
+      "id": "6",
+      "label": "SEXTO",
+      "icon": "grade-6.svg"
+    }
+  ],
+  "namingStandards": {
+    "gradeIcon": "images/icons/grades/grade-{id}.svg",
+    "featuredIcon": "images/icons/featured/{fileName}"
+  }
+}

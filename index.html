@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <link id="favicon-dynamic" rel="icon" href="images/icons/featured/site-favicon.jpg" type="image/jpg">
+</head>
+
+<body class="body-home">
+  <div class="site-container">
+    <header class="site-header">
+      <h1>NexoAula</h1>
+      <h2 class="blink-effect">¡BIENVENIDO! <br> MENU PRINCIPAL </h2>
+    </header>
+    <main class="main-grid">
+      <section class="left-column">
+        <h2>Grados Escolares</h2>
+        <div id="grades-list" class="grades-list"></div>
+      </section>
+      <section class="right-column">
+        <h2>Recursos Destacados</h2>
+        <div id="featured-list" class="featured-list"></div>
+      </section>
+    </main>
+
+    <div class="search-wrapper">
+      <div class="search-card google-card" data-form="google-form">
+        <img src="images/icons/featured/google-logo.svg" alt="Google" class="search-logo">
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>NexoAula</strong>
+        <span>Recursos digitales centralizados</span>
+      </div>
+
+      <div class="footer-technologies">
+        <span>Desarrollado con HTML, CSS y JavaScript Vanilla</span>
+      </div>
+
+      <div class="footer-validation">
+        <!-- Distintivos de validación -->
+      </div>
+
+      <div class="footer-legal">
+        <span>© 2026 Desarrollado por Yahir Samano</span>
+      </div>
+    </footer>
+
+    <div id="floating-overlay" class="floating-overlay hidden"></div>
+    <div id="floating-forms">
+      <div id="google-form" class="floating-form hidden google">
+        <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+          <input type="text" name="q" placeholder="Buscar en Google">
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--  
+░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░               ░▒▓███████▓▒░░▒▓██████▓▒░░▒▓██████████████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░ ░▒▓██████▓▒░  
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░               ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░   ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░             ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░  
+                                                                                                                                                                                   
+                                                                                                                                                                                    -->
