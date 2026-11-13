@@ -105,6 +105,7 @@ async function loadHomepage() {
         link.href = 'secondary.html';
         link.dataset.gradeId = g.id;
         const img = document.createElement('img');
+        img.alt = `Grado ${g.id}`;
         setIconWithFallback(img, GRADE_ICONS_PATH + (g.icon || `grade-${g.id}.svg`), FALLBACK_ICON);
         const footer = document.createElement('div');
         footer.className = 'card-footer';
@@ -123,9 +124,17 @@ async function loadHomepage() {
         box.className = 'featured-card';
         const a = document.createElement('a');
         a.href = item.url || '#';
-        a.target = '_blank';
+
+        const isExternal = a.origin !== window.location.origin;
+
+        if (isExternal) {
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+        }
+        a.href = item.url || '#';
         a.rel = 'noopener noreferrer';
         const img = document.createElement('img');
+        img.alt = `Acceso a ${item.name}`;
         setIconWithFallback(img, FEATURED_ICONS_PATH + (item.icon || 'featured-generic.svg'), FEATURED_ICONS_PATH + 'featured-generic.svg');
         const desc = document.createElement('div');
         desc.className = 'description';
@@ -167,6 +176,7 @@ async function loadSecondary() {
         const box = document.createElement('div');
         box.className = 'card-box';
         const img = document.createElement('img');
+        img.alt = `Grupo ${group}`;
         img.className = 'grade-img';
         setIconWithFallback(img, `${GROUP_ICONS_PATH}grade-${group.toLowerCase()}.svg`, FALLBACK_ICON);
         box.addEventListener('click', () => {
@@ -211,15 +221,8 @@ async function loadSecondary() {
     });
     const titleEl = document.getElementById('page-title');
     const gradeNameEl = document.getElementById('grade-name');
-    const faviconEl = document.getElementById('favicon-dynamic');
     if (titleEl) titleEl.textContent = `Grado ${selectedGrade}`;
     if (gradeNameEl) gradeNameEl.textContent = `Grado ${selectedGrade} lista de actividades`;
-    if (faviconEl)
-        setIconWithFallback(
-            faviconEl,
-            `${GRADE_ICONS_PATH}grade-${selectedGrade}.svg`,
-            FALLBACK_ICON
-        );
 }
 /**
  * Carga los grados y usuarios desde sus respectivos archivos JSON.
@@ -255,6 +258,7 @@ async function loadUsersPage() {
         link.dataset.gradeId = g.id;
         const img = document.createElement('img');
         setIconWithFallback(img, GRADE_ICONS_PATH + (g.icon || `grade-${g.id}.svg`), FALLBACK_ICON);
+        img.alt = g.label || `Grado ${g.id}`;
         const footer = document.createElement('div');
         footer.className = 'card-footer';
         const h = document.createElement('h6');
