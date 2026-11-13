@@ -124,6 +124,14 @@ async function loadHomepage() {
         box.className = 'featured-card';
         const a = document.createElement('a');
         a.href = item.url || '#';
+
+        const isExternal = a.origin !== window.location.origin;
+
+        if (isExternal) {
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+        }
+        a.href = item.url || '#';
         a.rel = 'noopener noreferrer';
         const img = document.createElement('img');
         img.alt = `Acceso a ${item.name}`;
