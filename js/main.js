@@ -127,6 +127,7 @@ async function loadHomepage() {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         const img = document.createElement('img');
+        img.alt = `Acceso a ${item.name}`;
         setIconWithFallback(img, FEATURED_ICONS_PATH + (item.icon || 'featured-generic.svg'), FEATURED_ICONS_PATH + 'featured-generic.svg');
         const desc = document.createElement('div');
         desc.className = 'description';
