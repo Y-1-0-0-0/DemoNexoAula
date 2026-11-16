@@ -553,6 +553,10 @@ input:hover {
     .card-box:hover .grade-img {
         transform: none;
     }
+
+    .blink-effect {
+        animation: none;
+    }
 }
 
 #activity-overlay {
