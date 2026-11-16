@@ -557,6 +557,10 @@ input:hover {
     .blink-effect {
         animation: none;
     }
+
+    body {
+        transition: none;
+    }
 }
 
 #activity-overlay {
