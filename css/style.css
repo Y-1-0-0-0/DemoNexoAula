@@ -63,7 +63,7 @@ body.fade-out {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr auto auto;
     gap: 1rem;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 1rem;
 }
 
@@ -348,7 +348,7 @@ body.fade-out {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.35);
     z-index: 5;
 }
@@ -434,7 +434,7 @@ input:hover {
 .secondary-main {
     display: grid;
     grid-template-rows: auto 1fr;
-    min-height: 100vh;
+    min-height: 100dvh;
     gap: 1rem;
     padding: 1rem;
 }
@@ -553,7 +553,7 @@ input:hover {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.35);
     z-index: 15;
     display: none;
@@ -588,7 +588,7 @@ input:hover {
 }
 
 #floating-activities .scroll-area {
-    max-height: 60vh;
+    max-height: 60dvh;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0.5rem;
@@ -664,7 +664,7 @@ input:hover {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background: rgba(0, 0, 0, 0.35);
     z-index: 20;
     display: none;
@@ -677,7 +677,7 @@ input:hover {
     transform: translate(-50%, -50%);
     width: 90vw;
     max-width: 600px;
-    max-height: 80vh;
+    max-height: 80dvh;
     background-color: var(--main-backg);
     border-radius: 0.75rem;
     margin: 0.9rem 0;
@@ -700,7 +700,7 @@ input:hover {
 
 #floating-users .scroll-area {
     overflow-y: auto;
-    max-height: calc(80vh - 4rem);
+    max-height: calc(80dvh - 4rem);
     padding-right: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -719,7 +719,7 @@ input:hover {
 #floating-users .scroll-area {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: calc(80vh - 3rem);
+    max-height: calc(80dvh - 3rem);
     padding: 0.25rem 0.5rem;
     scroll-behavior: smooth;
 }
@@ -786,7 +786,7 @@ input:hover {
 
 .scroll-area {
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 60dvh;
 }
 
 .scroll-area::-webkit-scrollbar {
