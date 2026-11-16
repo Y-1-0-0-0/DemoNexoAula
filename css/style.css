@@ -539,6 +539,16 @@ input:hover {
     transform: rotate(-5deg) scale(1.1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .grade-img {
+        transition: none;
+    }
+
+    .card-box:hover .grade-img {
+        transform: none;
+    }
+}
+
 #activity-overlay {
     position: fixed;
     top: 0;
