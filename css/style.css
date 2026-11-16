@@ -163,13 +163,6 @@ body.fade-out {
     text-decoration: none;
 }
 
-.grade-card img {
-    display: block;
-    margin: auto;
-    max-width: 80%;
-    max-height: 70%
-}
-
 .card-footer {
     width: 100%;
     padding: 10px 0;
@@ -242,11 +235,11 @@ body.fade-out {
     }
 }
 
+.grade-card img,
 .featured-card img {
     display: block;
-    margin: auto;
+    margin: 0 auto;
     max-width: 80%;
-    max-height: 80%;
 }
 
 .description {
