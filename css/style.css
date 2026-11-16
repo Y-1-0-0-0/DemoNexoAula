@@ -60,7 +60,7 @@ body.fade-out {
         "left right"
         "search search"
         "footer footer";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr auto auto;
     gap: 1rem;
     min-height: 100vh;
