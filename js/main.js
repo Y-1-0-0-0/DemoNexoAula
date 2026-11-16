@@ -363,27 +363,107 @@ if (overlay) {
         overlay.classList.add('hidden');
     });
 }
+
 /**
- * Aplica transiciones de entrada y salida entre páginas.
- * Excluye enlaces externos, anclas y enlaces que abren nuevas pestañas.
+ * Gestiona la navegación interna con transición de salida.
+ * Respeta enlaces externos, anclas, descargas y nuevas pestañas.
  */
-document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    body.classList.add('fade-in');
-    document.querySelectorAll('a[href]').forEach(link => {
-        if (link.hostname && link.hostname !== window.location.hostname) return;
-        if (link.getAttribute('href').startsWith('#')) return;
-        if (link.target === '_blank') return;
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            body.classList.remove('fade-in');
-            body.classList.add('fade-out');
-            setTimeout(() => {
-                window.location.href = link.href;
-            }, 500);
-        });
-    });
+let isNavigating = false;
+
+document.addEventListener('click', (event) => {
+
+    const link = event.target.closest('a[href]');
+    const homeButton = event.target.closest('button.home-button');
+
+    if (!link && !homeButton) return;
+
+    // Respeta eventos gestionados por otros componentes.
+    if (event.defaultPrevented) return;
+
+    // Solo intercepta clics principales sin modificadores.
+    if (
+        event.button !== 0 ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        event.metaKey
+    ) return;
+
+    let destination;
+
+    if (homeButton) {
+        destination = new URL('index.html', window.location.href);
+    } else {
+
+        if (link.hasAttribute('download')) return;
+
+        const target = link.getAttribute('target');
+
+        if (target && target.toLowerCase() !== '_self') return;
+
+        destination = new URL(link.href, window.location.href);
+
+        // No interceptar protocolos especiales.
+        if (!['http:', 'https:'].includes(destination.protocol)) return;
+
+        // No interceptar enlaces externos.
+        if (destination.origin !== window.location.origin) return;
+
+        // Respetar anclas dentro de la misma página.
+        if (
+            destination.pathname === window.location.pathname &&
+            destination.search === window.location.search &&
+            destination.hash
+        ) return;
+    }
+
+    event.preventDefault();
+
+    if (isNavigating) return;
+    isNavigating = true;
+
+    const navigate = () => {
+        window.location.assign(destination.href);
+    };
+
+    // Sin animaciones: navegación inmediata.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        navigate();
+        return;
+    }
+
+    let completed = false;
+
+    const finishNavigation = () => {
+        if (completed) return;
+
+        completed = true;
+
+        document.body.removeEventListener(
+            'transitionend',
+            handleTransitionEnd
+        );
+
+        navigate();
+    };
+
+    const handleTransitionEnd = (event) => {
+        if (
+            event.target === document.body &&
+            event.propertyName === 'opacity'
+        ) {
+            finishNavigation();
+        }
+    };
+
+    document.body.addEventListener('transitionend', handleTransitionEnd);
+
+    document.body.classList.add('fade-out');
+
+    // Respaldo por si transitionend no se dispara.
+    window.setTimeout(finishNavigation, 850);
 });
+
 /**
  * Gestiona el menú contextual personalizado.
  * Permite copiar texto seleccionado con notificaciones visuales
@@ -490,27 +570,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!path || path === 'index.html' || path === 'principal.html') {
         await loadHomepage();
 
-        // Espera a que la interfaz principal termine de generarse.
-        setTimeout(() => {
-            const usersCard = document.querySelector('.featured-card[href="users.html"]');
-
-            if (usersCard) {
-                usersCard.removeAttribute('target');
-
-                // Aplica una transición antes de navegar a la página de usuarios.
-                usersCard.addEventListener('click', e => {
-                    e.preventDefault();
-
-                    document.body.classList.remove('fade-in');
-                    document.body.classList.add('fade-out');
-
-                    setTimeout(() => {
-                        window.location.href = usersCard.getAttribute('href');
-                    }, 400);
-                });
-            }
-        }, 200);
-
         // Página de selección de actividades por grado.
     } else if (path === 'secondary.html') {
         await loadSecondary();
@@ -532,17 +591,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     FALLBACK_ICON
                 );
             }
-
-            // Intenta cerrar la ventana y, si no es posible, vuelve al inicio.
-            homeBtn.addEventListener('click', e => {
-                e.preventDefault();
-
-                window.close();
-
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 300);
-            });
         }
     }
 
