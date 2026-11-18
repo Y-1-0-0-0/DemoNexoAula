@@ -44,11 +44,6 @@ body {
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.fade-out {
-    opacity: 0;
-    pointer-events: none;
-}
-
 .site-container {
     display: grid;
     grid-template-areas:
@@ -781,14 +776,6 @@ input:hover {
     color: var(--high-marker);
     margin-left: 4px;
     font-size: 0.9em;
-}
-
-.fade-out {
-    opacity: 0;
-}
-
-.fade-in {
-    opacity: 1;
 }
 
 #floating-users {
