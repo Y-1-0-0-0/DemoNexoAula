@@ -25,7 +25,8 @@
 }
 
 .body-home,
-.body-secondary {
+.body-secondary,
+.body-users {
     background-color: var(--head-backg);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     user-select: none;
@@ -336,11 +337,6 @@ body {
     background-color: var(--highlight-elements);
 }
 
-.floating-form {
-    background-color: var(--high-backgrounds);
-    border-top: 4px solid var(--high-marker);
-}
-
 .floating-overlay {
     position: fixed;
     top: 0;
@@ -352,16 +348,18 @@ body {
 }
 
 .floating-form {
+    background-color: var(--high-backgrounds);
+    border-top: 4px solid var(--high-marker);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
     width: 90vw;
     max-width: 600px;
     padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
-    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -442,10 +440,11 @@ input:hover {
     align-items: center;
     justify-content: space-between;
     padding: 1em 2em;
+    margin-bottom: 1rem;
     background: var(--head-backg);
     color: var(--titles-txt);
     border-radius: 12px;
-    font-size: 1.3em;
+    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -454,8 +453,7 @@ input:hover {
     flex-direction: column;
     align-items: flex-end;
     gap: 0.25rem;
-    font-size: 0.95em;
-    color: var(--titles-txt);
+    font-size: 0.95rem;
     text-align: right;
 }
 
@@ -468,14 +466,13 @@ input:hover {
 
 .home-button img.home-icon {
     display: block;
-    width: 80px;
+    width: 70px;
     height: auto;
 }
 
 .home-button:hover {
     background-color: var(--high-marker);
     border-radius: 10px;
-    transform: scale(1.2);
 }
 
 .groups-container {
@@ -662,7 +659,9 @@ input:hover {
 }
 
 #custom-context-menu button:hover {
-    background: #e0e0e0;
+    background: var(--highlight-elements);
+    color: var(--main-txt);
+    border-radius: 5px;
 }
 
 #user-overlay {
@@ -695,7 +694,8 @@ input:hover {
     transition: opacity .25s ease, transform .18s ease;
     z-index: 25;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    overflow: hidden;
+    overflow: visible;
+    padding: 2rem 1.75rem;
 }
 
 #floating-users.show {
@@ -706,10 +706,10 @@ input:hover {
 
 #floating-users .scroll-area {
     overflow-y: auto;
-    max-height: calc(80dvh - 4rem);
-    padding-right: 4px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    overflow-x: hidden;
+    max-height: calc(80dvh - 3rem);
+    padding: 0.25rem 0.5rem;
+    scroll-behavior: smooth;
 }
 
 #floating-users .empty {
@@ -718,26 +718,9 @@ input:hover {
     font-weight: 600;
 }
 
-#custom-context-menu {
-    z-index: 25;
-}
-
-#floating-users .scroll-area {
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: calc(80dvh - 3rem);
-    padding: 0.25rem 0.5rem;
-    scroll-behavior: smooth;
-}
-
 .activity-item {
     transform-origin: center center;
     will-change: transform;
-}
-
-#floating-users {
-    overflow: visible;
-    padding: 2rem 1.75rem;
 }
 
 #floating-users .activity-item {
@@ -776,10 +759,6 @@ input:hover {
     color: var(--high-marker);
     margin-left: 4px;
     font-size: 0.9em;
-}
-
-#floating-users {
-    --sb-size: 15px;
 }
 
 .scroll-area {
