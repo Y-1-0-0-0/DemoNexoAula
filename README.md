@@ -31,8 +31,7 @@ Reducir las barreras de acceso a los recursos educativos digitales dentro del au
 ## Características principales
 
 - Interfaz accesible y adaptada para niños.  
-- Organización por grados escolares.  
-- Transiciones suaves entre páginas (SPA-like).  
+- Organización por grados escolares. 
 - Copia de datos al portapapeles accesible dentro del sitio web.
 - Modo de uso intuitivo tanto para alumnos como para docentes.  
 - Puede escalarse fácilmente para añadir más grados, grupos o contenido.
@@ -48,7 +47,6 @@ No obstante, su estructura permite contemplar una futura evolución hacia un ent
 - **Panel de administración:** gestión de usuarios, recursos educativos y configuración de la plataforma.
 
 ## Documentacion del proyecto
-La documentacion tecnica se encentra dentro del propio codigo en español, por otro lado la documentacion de usuario se encuentra aqui 
 
 ## ✍️ Autor
 
