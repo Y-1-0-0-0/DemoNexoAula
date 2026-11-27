@@ -48,6 +48,9 @@ No obstante, su estructura permite contemplar una futura evolución hacia un ent
 
 ## Documentacion del proyecto
 
+- **Documentacion tecnica:** Puedes encontrarla dentro de la carpeta [docs/](docs/), puedes utilizar esta [pagina](https://markdown.es/) para visualizar los archivos con el formato _Markdown_.
+- **Documentacion de usuario:** Debido a que este es una demostracion de un proyecto que se encuentra en desarrollo privado, no considero necesario detallar los manuales de usuario, sin embargo, dejo aqui un breve video donde se explica a detalle el uso de esta version demostrativa.
+
 ## ✍️ Autor
 
 **Yahir Samano** – Tecnico en Desarrollo de Codigo de Software, Ingeniero en Sistemas Computacionales  
